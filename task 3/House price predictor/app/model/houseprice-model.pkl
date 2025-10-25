@@ -1,0 +1,9 @@
+import joblib
+from sklearn.ensemble import RandomForestRegressor
+
+# Assume X_train and y_train are preprocessed
+model = RandomForestRegressor()
+model.fit(X_train, y_train)
+
+# Save the model
+joblib.dump(model, 'model/house_price_model.pkl')
