@@ -1,0 +1,28 @@
+"""
+Entry point for Flask application
+"""
+
+from app import create_app
+import os
+
+# Create Flask app
+app = create_app()
+
+if __name__ == '__main__':
+    # Get port from environment or use 5000
+    port = int(os.environ.get('PORT', 5000))
+    
+    print("\n" + "=" * 60)
+    print("🏠 HOUSE PRICE PREDICTOR API")
+    print("=" * 60)
+    print(f"\n🌐 Server running at: http://localhost:{port}")
+    print(f"📊 API Info: http://localhost:{port}/api/info")
+    print(f"💚 Health Check: http://localhost:{port}/health")
+    print("\nPress CTRL+C to stop the server\n")
+    
+    # Run Flask development server
+    app.run(
+        host='0.0.0.0',
+        port=port,
+        debug=True
+    )
